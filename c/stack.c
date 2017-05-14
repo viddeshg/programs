@@ -86,10 +86,11 @@ void display()
     
 }
 
+//handler() handles invalid input in the switch case.
 void handler()
 {
     printf("\n*Invalid choice*");
-    printf("Do you still wish to continue?(1/0)\nResponse::");
+    printf("\nDo you still wish to continue?(1/0)::");
     scanf("%d",&status);
     
     if(status == 1)
@@ -100,6 +101,7 @@ void handler()
     {
         if(status == 0)
         {
+            printf("END\n");
             exit(0);
         }
         else
@@ -131,7 +133,7 @@ int main()
             case 3: display();
                     break;
                 
-            case 4: exit(0);
+            case 4: goto END;
                     break;
 
             default: handler();
@@ -142,6 +144,7 @@ int main()
         scanf("%d",&status);
         if(status==1)
         {
+            END:
             loop++;
             printf("\nEND\n");
         }   
